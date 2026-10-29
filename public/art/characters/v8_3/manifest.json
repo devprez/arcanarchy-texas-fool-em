@@ -1,0 +1,26 @@
+{
+  "fool": {
+    "default": "fool/fool_default.png",
+    "smile": "fool/fool_smile.png",
+    "react": "fool/fool_react.png",
+    "lose": "fool/fool_lose.png"
+  },
+  "magician": {
+    "default": "magician/magician_default.png",
+    "smile": "magician/magician_smile.png",
+    "react": "magician/magician_react.png",
+    "lose": "magician/magician_lose.png"
+  },
+  "high_priestess": {
+    "default": "high_priestess/high_priestess_default.png",
+    "smile": "high_priestess/high_priestess_smile.png",
+    "react": "high_priestess/high_priestess_react.png",
+    "lose": "high_priestess/high_priestess_lose.png"
+  },
+  "empress": {
+    "default": "empress/empress_default.png",
+    "smile": "empress/empress_smile.png",
+    "react": "empress/empress_react.png",
+    "lose": "empress/empress_lose.png"
+  }
+}

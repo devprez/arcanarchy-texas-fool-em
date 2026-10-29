@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="night" x2="0" y2="1"><stop stop-color="#020813"/><stop offset=".5" stop-color="#12304a"/><stop offset="1" stop-color="#080e1a"/></linearGradient>
+ <linearGradient id="stone" x2="1" y2=".3"><stop stop-color="#080b12"/><stop offset=".48" stop-color="#25313b"/><stop offset=".65" stop-color="#111b28"/><stop offset="1" stop-color="#03060d"/></linearGradient>
+ <linearGradient id="brass"><stop stop-color="#332715"/><stop offset=".35" stop-color="#b69353"/><stop offset=".5" stop-color="#e0c58a"/><stop offset=".65" stop-color="#735029"/><stop offset="1" stop-color="#211c17"/></linearGradient>
+ <radialGradient id="haze"><stop stop-color="#78b7db" stop-opacity=".24"/><stop offset="1" stop-color="#569bc2" stop-opacity="0"/></radialGradient>
+ <radialGradient id="glow"><stop stop-color="#ffe1a3" stop-opacity=".7"/><stop offset=".12" stop-color="#e9a34d" stop-opacity=".25"/><stop offset="1" stop-color="#ed9b3f" stop-opacity="0"/></radialGradient>
+ <pattern id="stars" width="187" height="131" patternUnits="userSpaceOnUse"><circle cx="16" cy="27" r="1" fill="#d9e9ef" opacity=".8"/><circle cx="101" cy="62" r="1.4" fill="#c3d5d9" opacity=".7"/><circle cx="164" cy="12" r=".7" fill="#fff" opacity=".6"/><circle cx="58" cy="109" r=".8" fill="#99c3de"/></pattern>
+ <pattern id="tiles" width="120" height="75" patternUnits="userSpaceOnUse" patternTransform="skewX(-25)"><path d="M0 0H120V75H0Z" fill="none" stroke="#95805f" stroke-opacity=".1"/></pattern>
+ <g id="candle"><ellipse cy="46" rx="33" ry="8" fill="#07070d"/><path d="M-25 37Q0 27 25 37L18 45H-18Z" fill="url(#brass)"/><path d="M-7 35V-5H7V35" fill="#c8b998"/><path d="M-7 5Q-2 0 1 8T7 4" fill="none" stroke="#e9d9b3" stroke-width="2"/><path d="M0-32Q-11-15 0-7Q11-14 0-32" fill="#f4c273"/><path d="M0-23Q-4-14 0-11Q4-14 0-23" fill="#fff4cd"/><circle cy="-15" r="85" fill="url(#glow)"/></g>
+ <g id="column"><path d="M-39 90H39L32 600H-32Z" fill="url(#stone)"/><path d="M-47 75H47V105H-47ZM-49 595H49V624H-49Z" fill="url(#brass)"/><path d="M-22 115V581M0 115V581M22 115V581" stroke="#a08048" stroke-opacity=".18" stroke-width="3"/></g>
+</defs>
+<path fill="url(#night)" d="M0 0H1600V900H0Z"/><path fill="url(#stars)" d="M70 0H1530V610H70Z"/>
+<ellipse cx="800" cy="300" rx="690" ry="380" fill="url(#haze)"/>
+<!-- Vaulted windows, with clear depth behind the cast. -->
+<g fill="none" stroke="url(#brass)"><path d="M88 607V200Q88 10 318-8Q548 10 548 200V607M564 607V158Q564-46 800-90Q1036-46 1036 158V607M1052 607V200Q1052 10 1282-8Q1512 10 1512 200V607" stroke-width="18"/><path d="M102 607V204Q102 32 318 8Q534 32 534 204V607M578 607V160Q578-24 800-72Q1022-24 1022 160V607M1066 607V204Q1066 32 1282 8Q1498 32 1498 204V607" stroke-width="2" opacity=".6"/>
+<path d="M318 4V606M1282 4V606M800-70V606M95 235H541M571 212H1029M1059 235H1505M95 429H541M571 416H1029M1059 429H1505" stroke-width="5" opacity=".65"/>
+<path d="M96 233L318 4L540 233M1060 233L1282 4L1504 233M571 212L800-70L1029 212" stroke-width="3" opacity=".5"/></g>
+<!-- Crescent and the sea of roofs outside. -->
+<path d="M1181 84A54 54 0 1 0 1254 158A47 47 0 0 1 1181 84" fill="#c5d9e1" opacity=".78"/>
+<path d="M80 564V498L123 473L166 494V530L214 503L257 534V486L278 447L298 486V538L352 516L408 550V506L438 467L468 506V560L529 542L578 574V518L626 491L676 519V566L723 543L774 572V519L802 465L829 519V565L890 538L943 565V507L985 485L1026 507V570L1082 538L1129 556V515L1165 458L1200 515V552L1250 535L1304 562V512L1344 472L1386 514V555L1440 533L1507 563V650H80Z" fill="#07101c" opacity=".9"/>
+<g fill="#e5b26a" opacity=".3"><path d="M275 497H280V506H275ZM303 544H308V551H303ZM798 530H803V539H798ZM989 516H994V526H989ZM1167 526H1172V536H1167ZM1342 527H1347V537H1342Z"/></g>
+<use href="#column" x="68"/><use href="#column" x="555"/><use href="#column" x="1044"/><use href="#column" x="1532"/>
+<!-- Curved wooden gallery, brass instruments, and shaded floor. -->
+<path d="M0 603Q800 542 1600 603V672Q800 612 0 672Z" fill="#100d16"/><path d="M0 603Q800 542 1600 603" fill="none" stroke="url(#brass)" stroke-width="7"/>
+<path d="M0 672Q800 612 1600 672V900H0Z" fill="#08080f"/><path d="M0 672Q800 612 1600 672V900H0Z" fill="url(#tiles)"/>
+<g transform="translate(1390 280)" fill="none" stroke="url(#brass)"><ellipse rx="89" ry="103" stroke-width="7"/><ellipse rx="95" ry="34" transform="rotate(-35)" stroke-width="5"/><ellipse rx="95" ry="34" transform="rotate(42)" stroke-width="5"/><ellipse rx="26" ry="103" transform="rotate(20)" stroke-width="4"/><circle r="15" fill="#77603b" stroke-width="3"/><path d="M0 103V156M-46 164Q0 140 46 164" stroke-width="9"/><path d="M-78-65L81 65" stroke-width="3"/></g>
+<g transform="translate(191 290) rotate(-22)" stroke="url(#brass)" fill="#121922"><path d="M-81-21H63V21H-81Z" stroke-width="6"/><ellipse cx="-81" rx="16" ry="27" stroke-width="6"/><ellipse cx="63" rx="12" ry="20" stroke-width="5"/><path d="M-15 25V95M-15 55L-65 116M-15 55L35 116" fill="none" stroke-width="7"/></g>
+<g opacity=".95"><use href="#candle" x="83" y="320"/><use href="#candle" x="1503" y="320"/><use href="#candle" x="376" y="340" transform="translate(0 20)"/><use href="#candle" x="1225" y="340" transform="translate(0 20)"/></g>
+<path d="M0 0H1600V900H0Z" fill="none" stroke="#02030b" stroke-width="100" opacity=".25"/>
+</svg>

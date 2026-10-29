@@ -1,0 +1,100 @@
+{
+  "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
+    "file": "_next/static/chunks/app-route-prefetch-policy-D9oG5NFN.js",
+    "name": "app-route-prefetch-policy",
+    "src": "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "virtual:vinext-app-browser-entry"
+    ]
+  },
+  "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-CJB3wrgT.js",
+    "name": "layout-segment-context",
+    "src": "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/streamed-icons.js": {
+    "file": "_next/static/chunks/streamed-icons-DNogeH_Z.js",
+    "name": "streamed-icons",
+    "src": "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/streamed-icons.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "_audio-DMMouCyg.js": {
+    "file": "_next/static/chunks/audio-DMMouCyg.js",
+    "name": "audio"
+  },
+  "_framework-D_rUT4EX.js": {
+    "file": "_next/static/chunks/framework-D_rUT4EX.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js"
+    ]
+  },
+  "_rolldown-runtime-C60lm6uB.js": {
+    "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+    "name": "rolldown-runtime"
+  },
+  "app/page.tsx": {
+    "file": "_next/static/chunks/page-BohNqk9l.js",
+    "name": "page",
+    "src": "app/page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js",
+      "components/audio-controls.tsx",
+      "_audio-DMMouCyg.js"
+    ]
+  },
+  "components/audio-controls.tsx": {
+    "file": "_next/static/chunks/audio-controls-BjEmNxix.js",
+    "name": "audio-controls",
+    "src": "components/audio-controls.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js",
+      "_audio-DMMouCyg.js"
+    ]
+  },
+  "components/audio-runtime.tsx": {
+    "file": "_next/static/chunks/audio-runtime-HcJHCpSQ.js",
+    "name": "audio-runtime",
+    "src": "components/audio-runtime.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js",
+      "_audio-DMMouCyg.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "_next/static/chunks/index-CVEKjxT1.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ],
+    "dynamicImports": [
+      "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+      "components/audio-runtime.tsx",
+      "virtual:vinext-app-browser-entry",
+      "app/page.tsx",
+      "components/audio-controls.tsx",
+      "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/streamed-icons.js",
+      "../../../../2026-10-27/referenced-chatgpt-conversation-this-is-an/outputs/arcanarchy/node_modules/vinext/dist/shims/layout-segment-context.js"
+    ]
+  }
+}

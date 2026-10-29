@@ -1,0 +1,10 @@
+# Scope: this new game folder only. Do not move this file to /arcanarchy.
+DirectoryIndex index.html
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase Authorization "^(.+)$" HTTP_AUTHORIZATION=$1
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-store"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,14 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createRoom,action,view} from '../lib/game.ts';
+import {addBot} from '../lib/ai.ts';
+import {speak,afterAction} from '../lib/banter/index.ts';
+import {DIALOGUE} from '../lib/banter/dialogue.ts';
+import {CHANCES} from '../lib/banter/personas.ts';
+const room=()=>{const r=createRoom('BANTER','Human',crypto.randomUUID());addBot(r,r.host,0);delete r.banter;return r};
+test('all four personas have multiple authored lines for each supported trigger',()=>{for(const pools of Object.values(DIALOGUE))for(const key of Object.keys(CHANCES))assert.ok(pools[key].length>=2)});
+test('deterministic selection, cooldown, no repetition before exhausting pool, bounded history',()=>{const r=room(),copy=structuredClone(r);speak(r,'fool_event',undefined,100000);speak(copy,'fool_event',undefined,100000);assert.deepEqual(r.banter,copy.banter);let now=120000;for(let i=0;i<100;i++,now+=10000)speak(r,'fool_event',undefined,now);assert.equal(r.banter.messages.length,30);const m=r.banter.messages;for(let i=1;i<m.length;i++)assert.ok(m[i].sentAt-m[i-1].sentAt>=9000);const count=m.length;speak(r,'fool_event',undefined,now-9999);assert.equal(r.banter.messages.length,count);for(let i=0;i<m.length-1;i+=2)assert.ok(DIALOGUE.magician.fool_event.includes(m[i].body));assert.ok(r.banter.used[`${r.players[1].id}:fool_event`].length<=2)});
+test('game state view hides dialogue memory; failed moves and reads never emit lines',()=>{const r=room();action(r,r.host,'start');const before=structuredClone(r.banter);view(r,r.players[0].token);assert.equal(view(r,r.players[0].token).banter,undefined);assert.deepEqual(r.banter,before);assert.throws(()=>action(r,'intruder','raise'));assert.deepEqual(r.banter,before)});
+test('Empress is host-selectable and cannot duplicate or bypass seat limits',()=>{const r=room();addBot(r,r.host,3);assert.equal(r.players[2].bot,'empress');assert.throws(()=>addBot(r,r.host,3));assert.throws(()=>addBot(r,'intruder',2))});
+test('public event dialogue is independent of private cards and deck',()=>{const a=room(),b=structuredClone(a);b.board=[{rank:14,suit:0}];b.deck=[{rank:2,suit:0}];b.players[0].hand=[{rank:14,suit:3}];speak(a,'raise',undefined,100000);speak(b,'raise',undefined,100000);assert.deepEqual(a.banter,b.banter)});
+test('round outcomes update streak once at transition and round start preserves cooldown',()=>{const r=room();addBot(r,r.host);delete r.banter;r.phase='results';r.winners=[r.host];afterAction(r,r.host,'check',{phase:'betting',round:1,raised:false},100000);assert.equal(r.banter.streak[r.host],1);const before=structuredClone(r.banter);afterAction(r,r.host,'next',{phase:'results',round:1,raised:false},101000);assert.deepEqual(r.banter,before)});

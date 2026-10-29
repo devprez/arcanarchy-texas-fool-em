@@ -1,0 +1,206 @@
+/* One shared physical scene; room art never controls furniture or seat geometry. */
+.character-game{isolation:isolate;min-height:650px}
+.character-game .room-environment{inset:0;opacity:1;transform:none;background:none;overflow:hidden}
+.room-environment img{display:block;position:absolute;width:100%;height:100%;object-fit:contain;object-position:center top}
+.character-game .room-shadows{z-index:1;background:linear-gradient(180deg,#08061233,transparent 40%,#08061255 70%,#080612ee)}
+.character-game .stage-topline{z-index:20;top:0;left:3%;right:3%;height:45px;font-size:13px;color:#f0ddb2;gap:22px;background:#0a081499;padding:0 14px;border-bottom:1px solid #bd94583b}
+.character-game .stage-topline small{font-size:11px;color:#e5d4b8;letter-spacing:1px}
+.character-game .stage-topline button{font-size:11px;color:#e5d4b8;min-height:40px}
+.in-stage .header-tools .text-button,.in-stage .audio-toggle{font-size:12px;min-height:40px}
+.character-game .dealer-presence{z-index:2;left:50%;top:52px;max-width:460px}
+.character-game .dealer-presence small{font-size:10px;max-width:370px;line-height:1.4}
+/* The stage has no stacking context: artwork sits behind the felt; labels above it. */
+.character-game .character-stage{position:absolute;inset:0;height:100%;margin:0;display:block;overflow:visible;z-index:auto}
+.character-game .character-seat{position:absolute;top:12%;left:50%;width:min(46vw,66vh);height:min(46vw,66vh);max-width:none;transform:translateX(-50%);overflow:visible;isolation:auto}
+.character-game .opponents-3 .character-seat:nth-child(1){left:26%;top:12%}
+.character-game .opponents-3 .character-seat:nth-child(2){left:50%;top:8%}
+.character-game .opponents-3 .character-seat:nth-child(3){left:74%;top:12%}
+.character-game .opponents-2 .character-seat{width:min(51vw,73vh);height:min(51vw,73vh);top:8%}
+.character-game .opponents-2 .character-seat:nth-child(1){left:33%}
+.character-game .opponents-2 .character-seat:nth-child(2){left:67%}
+.character-game .opponents-1 .character-seat{width:min(60vw,82vh);height:min(60vw,82vh);top:4%;left:50%;max-width:none}
+.character-game .character-seat>.persona-portrait{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;aspect-ratio:1;object-fit:contain;mask-image:none;z-index:3;filter:drop-shadow(0 8px 12px #0006);margin:0}
+.character-game .character-seat:before{display:none}
+.character-game .character-seat.has-folded>.persona-portrait{filter:saturate(.65) brightness(.8)}
+.character-game .character-nameplate{position:absolute;top:auto;bottom:12%;left:21%;right:21%;width:auto;max-width:none;min-height:56px;height:auto;margin:0;padding:9px 13px;gap:9px;background:#0b081499;border:1px solid #c3a06288;border-radius:5px;z-index:8;color:#f4dfb8;text-shadow:0 1px 3px #000;box-shadow:none}
+.character-game .character-seat.taking-turn .character-nameplate{background:#18102299;border-color:var(--persona-color)}
+.character-game .character-nameplate>span{font-size:17px}
+.character-game .character-nameplate b{font-size:12px}
+.character-game .character-nameplate small{font-size:8px;line-height:1.5;letter-spacing:.2px}
+.character-game .character-nameplate strong{font-size:19px;padding-left:8px;position:relative;white-space:nowrap}
+.character-game .opponent-cards{z-index:9;right:24%;bottom:5%;transform:rotate(5deg)}
+.character-game .opponent-result{z-index:9;bottom:1%;left:24%;font-size:9px;background:#0b0814b3;padding:3px 6px}
+.character-game .character-callout{z-index:16;bottom:auto;top:25%;left:25%;right:15%;font-size:11px;max-height:100px}
+.character-game .table-surface{position:absolute;top:48%;bottom:13%;left:1%;right:1%;z-index:5;border:0;border-radius:0;box-shadow:none;background:none;isolation:auto;overflow:visible;padding:0}
+.rendered-tabletop{position:absolute;inset:-7% 0 -5%;width:100%;height:112%;object-fit:fill;pointer-events:none;z-index:-1;filter:drop-shadow(0 15px 20px #0009)}
+.character-game .community-zone{position:absolute;left:24%;right:20%;top:10%;bottom:15%;padding:0}
+.character-game .community-cards .tarot{width:clamp(60px,7.6vw,130px);max-height:21vh}
+.character-game .table-status{font-size:10px;gap:12px;margin-bottom:8px;background:#0c0814b3;border-radius:5px;padding:6px 10px;min-height:28px}
+.character-game .table-status small{font-size:10px}
+.character-game .table-whisper{font-size:7px}
+.character-game .stage-omen{position:absolute;left:8%;top:8%;width:120px;min-height:0;margin:0;gap:7px;z-index:6}
+.character-game .omen-reading{background:#0b0814b3;border:1px solid #b7985733;border-radius:5px;padding:8px 10px;max-width:145px;text-align:center}
+.character-game .omen-reading h3{font-size:11px}
+.character-game .omen-reading p{font-size:10px;display:block;line-height:1.4}
+.character-game .stage-omen .omen-card-face{width:60px;height:90px}
+.character-game .player-foreground{z-index:10;bottom:1%;height:19%;left:4%;right:26%}
+.character-game .local-cards .tarot{height:19vh}
+.character-game .local-identity{width:155px;background:#0b081499;border-radius:5px;padding:9px;gap:8px}
+.character-game .local-identity>.persona-portrait{display:none}
+.character-game .local-identity strong{display:flex;align-items:center;gap:6px;font-size:12px}
+.character-game .stage-decisions>p,.character-game .stage-fool{background:#0b0814b3;border-radius:5px;padding:6px 9px}
+.character-game .stage-talk{z-index:14;bottom:4%;right:3%;width:21%;padding:9px 12px;background:#0b081499;border-radius:5px}
+.character-game .stage-result{position:relative;inset:auto;background:#0b0814cc;border-radius:5px;margin-bottom:8px;padding:8px}
+.character-game .stage-lore{z-index:15;font-size:9px}
+.character-game>.cat-presence{z-index:2;top:34%;right:4%;width:65px}
+.character-game>.cat-fate,.character-game>.cat-ominous{z-index:6;top:68%;right:5%;width:75px}
+.chip-stack{display:inline-block;width:39px;height:34px;vertical-align:middle;flex-shrink:0}
+.chip-stack>.atlas-region{display:block;width:100%;height:100%;background-repeat:no-repeat}
+.character-nameplate .chip-stack{position:absolute;right:-35px;bottom:-13px;width:50px;height:44px}
+.chip-pot{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.chip-pot .chip-stack{width:34px;height:29px}
+/* A simple production frame only at the header edge keeps the playing field quiet. */
+.character-game .stage-topline:after{content:'';position:absolute;inset:auto 0 -7px;height:9px;background:url('/art/production/frames.png') center 1% / 100% 7200% no-repeat;pointer-events:none;opacity:.8}
+.universe-gallery{padding:60px 7%;background:#0d0916}.universe-gallery h2{font:500 30px 'Cinzel',serif;color:#e5c98d}.universe-gallery>div{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.universe-gallery figure{margin:0}.universe-gallery img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border:1px solid #ad894a}.universe-gallery figcaption{font:500 14px 'Cinzel',serif;text-align:center;margin-top:14px;color:#e5c98d}
+@media(min-width:901px) and (max-height:740px){
+ .character-game{min-height:540px}.character-game .character-seat{top:8%;width:min(45vw,70vh);height:min(45vw,70vh)}
+ .character-game .opponents-3 .character-seat:nth-child(2){top:4%}
+ .character-game .character-nameplate{bottom:6%;min-height:46px;padding:6px 10px}
+ .character-game .opponent-cards{bottom:-2%}.character-game .opponent-result{bottom:-6%}
+ .character-game .table-surface{top:48%;bottom:15%}.character-game .stage-omen{top:4%;width:110px}.character-game .stage-omen .omen-card-face{width:42px;height:63px}.character-game .omen-reading{padding:5px}.character-game .omen-reading p{font-size:8px}.character-game .omen-reading h3{font-size:9px}
+ .character-game .player-foreground{height:19%}.character-game .stage-actions .primary,.character-game .stage-actions .secondary{padding:9px 12px}
+ .character-game .stage-fool{margin-top:2px}.character-game .dealer-presence small{font-size:9px}
+}
+@media(max-width:900px){
+ .character-game{height:auto;min-height:100dvh;padding:0 12px 24px;overflow:hidden}
+ .character-game .room-environment{height:650px}.room-environment img{object-fit:contain;width:100%;height:auto;min-height:0}
+ .character-game .room-shadows{background:linear-gradient(180deg,transparent,#08061244 360px,#080612 650px)}
+ .character-game .stage-topline{position:relative;inset:auto;height:auto;min-height:66px;padding:9px 0;gap:8px;flex-wrap:wrap;font-size:11px;background:#0b081499}
+ .character-game .stage-topline>div{flex:1 0 52%}.character-game .stage-topline small{display:block;font-size:9px;margin:3px 0 0 10px}
+ .character-game .stage-topline button{font-size:10px;min-height:32px}
+ .character-game .dealer-presence{position:absolute;left:50%;top:76px;width:90%;max-width:none;transform:translateX(-50%);height:30px;margin:0}
+ .character-game .dealer-presence small{font-size:8px}
+ .character-game .character-stage{position:relative;inset:auto;height:245px;flex-shrink:0;margin:0 -12px}
+ .character-game .character-seat,.character-game .opponents-1 .character-seat,.character-game .opponents-2 .character-seat{top:-2%;width:80vw;height:80vw;max-width:400px;max-height:400px;left:50%;transform:translateX(-50%)}
+ .character-game .opponents-3 .character-seat{width:65vw;height:65vw;top:10%}
+ .character-game .opponents-3 .character-seat:nth-child(1){left:23%;top:10%}.character-game .opponents-3 .character-seat:nth-child(2){left:50%;top:2%}.character-game .opponents-3 .character-seat:nth-child(3){left:77%;top:10%}
+ .character-game .opponents-2 .character-seat:nth-child(1){left:30%}.character-game .opponents-2 .character-seat:nth-child(2){left:70%}
+ .character-game .character-nameplate{bottom:8%;left:25%;right:25%;min-height:43px;padding:6px;gap:3px}
+ .character-game .character-nameplate b{font-size:9px}.character-game .character-nameplate small{font-size:6px}.character-game .character-nameplate strong{font-size:12px;padding-left:4px}.character-game .character-nameplate>span{display:none}
+ .character-game .opponents-3 .character-nameplate{left:23%;right:23%;bottom:-2%}
+ .character-game .opponent-cards{bottom:-2%;right:26%}.character-game .opponents-3 .opponent-cards{bottom:-12%}
+ .character-game .opponent-result{display:none}.character-game .character-callout{top:5%;font-size:9px;max-height:70px}
+ .character-game .table-surface{position:relative;inset:auto;min-height:285px;flex-shrink:0;margin:0 -8px;padding:0;z-index:5}
+ .rendered-tabletop{inset:-4% -5% -4%;width:110%;height:108%}
+ .character-game .community-zone{left:22%;right:5%;top:20%;bottom:15%;padding:0}
+ .character-game .community-cards{gap:3px}.character-game .community-cards .tarot{width:18%;max-height:none;min-width:0}
+ .character-game .table-status{font-size:7px;white-space:normal;gap:5px;padding:4px}.character-game .table-status small,.character-game .table-status .chip-pot{font-size:7px}
+ .character-game .stage-omen{position:absolute;left:4%;top:17%;width:58px;gap:5px;flex-direction:column}
+ .character-game .stage-omen .omen-card-face{width:34px;height:51px}.character-game .omen-reading{padding:5px;max-width:70px}.character-game .omen-reading h3{font-size:8px}.character-game .omen-reading p{font-size:7px}
+ .character-game .player-foreground{position:relative;inset:auto;height:auto;margin:16px 0 0;gap:12px}
+ .character-game .local-hand{height:150px}.character-game .local-cards .tarot{height:145px}.character-game .local-identity{width:120px}
+ .character-game .stage-talk{position:relative;inset:auto;width:100%;margin-top:18px;padding:9px}
+ .character-game .stage-lore{position:relative;inset:auto;margin:20px auto 0}
+ .character-game>.cat-presence{top:205px;width:35px}.character-game>.cat-fate,.character-game>.cat-ominous{top:500px;width:45px}
+ .character-nameplate .chip-stack{right:-13px;bottom:-22px;width:30px;height:26px}.chip-pot .chip-stack{width:24px;height:21px}
+ .universe-gallery>div{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:no-preference){.room-environment img{animation:scene-enter .35s ease-out}@keyframes scene-enter{from{opacity:.3}to{opacity:1}}}
+/* Seat canvases stay fixed while labels share the tabletop plane. Avoid a
+   transformed seat wrapper, which would trap its nameplate behind the felt. */
+@media(min-width:901px){
+ .character-game{--scene-height:calc(100dvh - 64px)}
+ .character-game .character-seat{--seat-size:min(46vw,66vh);--seat-top:calc(var(--scene-height)*-.03);width:var(--seat-size);height:var(--seat-size);top:var(--seat-top);left:calc(50% - var(--seat-size)/2);transform:none}
+ .character-game .opponents-3 .character-seat:nth-child(1){left:calc(26% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .opponents-3 .character-seat:nth-child(2){--seat-top:calc(var(--scene-height)*-.07);left:calc(50% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .opponents-3 .character-seat:nth-child(3){left:calc(74% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .opponents-2 .character-seat{--seat-size:min(51vw,73vh);--seat-top:calc(var(--scene-height)*-.08);top:var(--seat-top)}
+ .character-game .opponents-2 .character-seat:nth-child(1){left:calc(33% - var(--seat-size)/2)}
+ .character-game .opponents-2 .character-seat:nth-child(2){left:calc(67% - var(--seat-size)/2)}
+ .character-game .opponents-1 .character-seat{--seat-size:min(60vw,82vh);--seat-top:calc(var(--scene-height)*-.15);left:calc(50% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .character-nameplate{top:calc(var(--scene-height)*.49 - var(--seat-top));bottom:auto}
+ .character-game .opponent-cards{top:calc(var(--scene-height)*.49 - var(--seat-top) + 62px);bottom:auto}
+ .character-game .opponent-result{top:calc(var(--scene-height)*.49 - var(--seat-top) + 90px);bottom:auto}
+ .character-game .table-surface{top:55%;bottom:10%}
+ .character-game .community-cards .tarot{max-height:18vh}
+ .character-game .community-zone{top:12%;bottom:15%}
+ .character-game .stage-omen{top:5%}
+ .character-game .player-foreground{bottom:0;height:17%}
+ .character-game .local-cards .tarot{height:17vh}
+}
+@media(max-width:900px){
+ .character-game .character-seat,.character-game .opponents-1 .character-seat,.character-game .opponents-2 .character-seat{--seat-size:min(80vw,400px);--seat-top:-5px;width:var(--seat-size);height:var(--seat-size);top:var(--seat-top);left:calc(50% - var(--seat-size)/2);transform:none}
+ .character-game .opponents-2 .character-seat:nth-child(1){left:calc(30% - var(--seat-size)/2)}
+ .character-game .opponents-2 .character-seat:nth-child(2){left:calc(70% - var(--seat-size)/2)}
+ .character-game .opponents-3 .character-seat{--seat-size:min(65vw,400px);--seat-top:24px}
+ .character-game .opponents-3 .character-seat:nth-child(1){left:calc(23% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .opponents-3 .character-seat:nth-child(2){--seat-top:4px;left:calc(50% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .opponents-3 .character-seat:nth-child(3){left:calc(77% - var(--seat-size)/2);top:var(--seat-top)}
+ .character-game .character-nameplate,.character-game .opponents-3 .character-nameplate{top:calc(209px - var(--seat-top));bottom:auto;left:24%;right:24%}
+ .character-game .opponent-cards,.character-game .opponents-3 .opponent-cards{top:calc(253px - var(--seat-top));bottom:auto}
+}
+@media(min-width:901px){.character-game .opponents-3 .character-seat:nth-child(2){--seat-top:calc(var(--scene-height)*.01)}.character-game .opponents-1 .character-seat{--seat-top:calc(var(--scene-height)*-.11)}}
+/* Fade only the lower background art beneath the real furniture, including any
+   baked table. This retains the room's full width without a second table edge. */
+.room-environment img{mask-image:linear-gradient(#000 0 56%,transparent 85%)}
+.character-game .stage-actions .primary,.character-game .stage-actions .secondary{background-image:none;background-color:#16101fe6;border:1px solid #b39152;border-radius:5px;box-shadow:inset 0 0 0 3px #261c32;padding:12px 18px}
+@media(min-width:901px){.character-game .opponents-2 .character-seat{max-width:none}}
+@media(max-width:900px){.character-game .opponents-3 .character-seat{--seat-size:min(60vw,360px)}.character-game .opponents-3 .character-seat:nth-child(1){left:calc(25% - var(--seat-size)/2)}.character-game .opponents-3 .character-seat:nth-child(3){left:calc(75% - var(--seat-size)/2)}}
+@media(min-width:901px){.character-game .opponents-2 .character-seat[data-persona=priestess],.character-game .opponents-1 .character-seat[data-persona=priestess]{--seat-top:calc(var(--scene-height)*.02)}}
+/* Upgraded masters retain their original full canvases. Frame the artwork
+   inside existing fixed seats; nameplates, table and seat dimensions stay put. */
+.character-game .room-environment{z-index:-2;pointer-events:none}
+.character-game .room-shadows{z-index:-1;pointer-events:none}
+.character-game .character-stage{isolation:auto;transform:none;z-index:auto}
+.character-game .character-seat{overflow:visible}
+.character-game .character-seat>.persona-portrait{mask:none;clip-path:none;object-fit:contain}
+@media(min-width:901px){
+ .character-game .character-seat>.persona-portrait{top:calc(var(--scene-height)*.12 - var(--seat-top));bottom:auto}
+ .character-game .opponents-3 .character-seat:nth-child(2)>.persona-portrait{top:calc(var(--scene-height)*.08 - var(--seat-top))}
+ .character-game .opponents-1 .character-seat>.persona-portrait,.character-game .opponents-2 .character-seat>.persona-portrait{top:calc(var(--scene-height)*.1 - var(--seat-top))}
+}
+@media(max-width:900px){
+ .character-game .character-seat>.persona-portrait{top:calc(65px - var(--seat-top));bottom:auto}
+ .character-game .opponents-1 .character-seat>.persona-portrait{top:calc(45px - var(--seat-top))}
+ .character-game .opponents-2 .character-seat{--seat-size:min(57vw,400px)}
+ .character-game .opponents-3 .character-seat{--seat-size:min(48vw,360px)}
+ .character-game .opponents-3 .character-seat>.persona-portrait{top:calc(80px - var(--seat-top))}
+ .character-game .opponents-3 .character-seat:nth-child(2)>.persona-portrait{top:calc(60px - var(--seat-top))}
+ .character-game .opponents-3 .character-nameplate{left:10%;right:10%}
+}
+/* Compact multiplayer action; one readable primary play action. */
+.entry-panel .entry-create{background-image:none;background-color:#17111e;border:1px solid #c5a361;border-radius:5px;box-shadow:inset 0 0 0 3px #251b2c;min-height:40px;padding:10px 22px;font-size:12px;letter-spacing:.7px;width:100%}
+.entry-panel .multiplayer-entry-note{font-size:10px;color:#c0b09c;line-height:1.4;margin:7px 0 0;text-align:center}
+.entry-panel .solo-entry{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px;padding-top:10px}
+.entry-panel .solo-entry-options{min-width:0}
+.entry-panel .solo-entry-options label{flex-direction:row;align-items:center;justify-content:space-between;font-size:9px}
+.entry-panel .solo-entry-options select{width:86px}
+.entry-panel .solo-entry .solo-button{width:100%;min-height:53px;border:1px solid #e3c47c;border-radius:5px;background:#d7bc7d;color:#1a1220;box-shadow:inset 0 0 0 3px #3a2a2d;padding:11px 20px;justify-content:space-between}
+.entry-panel .solo-entry .solo-button span{font-size:16px}.entry-panel .solo-entry .solo-button small{font-size:8px}
+.lore-actions .primary{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-width:210px;min-height:52px}
+.universe-chapters a.primary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 24px;color:#f0d8a0;font-size:12px}
+.universe-link{color:#e2c37c}
+@media(max-width:900px){
+ /* A scenic viewport uses only the upper room; baked furniture stays below
+    the real table plane. The background can never enter the character stack. */
+ .character-game .room-environment{height:360px;overflow:hidden}
+ .character-game .room-environment img{width:100%;height:640px;object-fit:cover;object-position:center top;mask-image:linear-gradient(#000 0 45%,transparent 58%)}
+ .character-game .opponents-3 .character-seat{width:var(--seat-size);height:var(--seat-size);max-width:none;max-height:none}
+}
+@media(max-width:900px){
+ .character-game .opponents-3 .character-nameplate{left:50%;right:auto;width:calc((100vw - 120px)/3);transform:translateX(-50%);padding:6px 5px}
+}
+.entry-panel .solo-entry .solo-button span,.entry-panel .solo-entry .solo-button small,.entry-panel .solo-entry .solo-button b{color:#1a1220}
+@media(max-width:420px){
+ .character-game .local-identity{width:95px;padding:7px}
+ .character-game .local-hand{gap:6px}
+ .character-game .local-cards .tarot{width:clamp(68px,25vw,100px);height:auto;aspect-ratio:2/3}
+ .character-game .local-cards{height:auto}
+}
+@media(max-width:360px){
+ .in-stage>header{padding-inline:10px;gap:8px}
+ .in-stage .brand-jewel{width:28px;height:28px}
+ .in-stage .brand-name{font-size:14px}
+ .in-stage .header-tools{gap:8px}
+ .in-stage .header-tools .text-button{font-size:10px;padding-inline:0;white-space:nowrap}
+}

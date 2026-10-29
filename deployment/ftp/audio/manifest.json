@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "installed": [
+    "/arcanarchy/texas-fool-em/audio/music/table-ambience.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/card-deal-01.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/card-deal-02.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/card-deal-03.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/card-deal-04.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/card-reveal.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/fold.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/fool.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/loss.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/notify.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/omen-reveal.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/ui-select.mp3",
+    "/arcanarchy/texas-fool-em/audio/sfx/win.mp3"
+  ]
+}

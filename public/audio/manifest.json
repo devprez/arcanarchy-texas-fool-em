@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "installed": [
+    "/audio/music/table-ambience.mp3",
+    "/audio/sfx/card-deal-01.mp3",
+    "/audio/sfx/card-deal-02.mp3",
+    "/audio/sfx/card-deal-03.mp3",
+    "/audio/sfx/card-deal-04.mp3",
+    "/audio/sfx/card-reveal.mp3",
+    "/audio/sfx/fold.mp3",
+    "/audio/sfx/fool.mp3",
+    "/audio/sfx/loss.mp3",
+    "/audio/sfx/notify.mp3",
+    "/audio/sfx/omen-reveal.mp3",
+    "/audio/sfx/ui-select.mp3",
+    "/audio/sfx/win.mp3"
+  ]
+}

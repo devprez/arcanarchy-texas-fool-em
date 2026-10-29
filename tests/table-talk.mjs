@@ -1,0 +1,19 @@
+import assert from 'node:assert/strict';
+const base=process.argv[2]||'http://127.0.0.1:5173';const host=crypto.randomUUID(),guest=crypto.randomUUID(),outsider=crypto.randomUUID();
+async function game(token,action,extra={}){const response=await fetch(`${base}/api/game`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({action,...extra})});const data=await response.json();assert.ok(!data.error,data.error);return data}
+async function talk(token,code,body,id=crypto.randomUUID(),extra={}){const response=await fetch(`${base}/api/talk`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json',...extra.headers},body:JSON.stringify({code,body,id,...extra.payload})});const text=await response.text();let data;try{data=JSON.parse(text)}catch{data={error:text}}return{status:response.status,data}}
+async function read(token,code){const response=await fetch(`${base}/api/talk?code=${code}`,{headers:{Authorization:`Bearer ${token}`}});const text=await response.text();let data;try{data=JSON.parse(text)}catch{data={error:text}}return{status:response.status,data}}
+const room=await game(host,'create',{name:'Talk Host'}),code=room.code;await game(guest,'join',{code,name:'Talk Guest'});const other=await game(outsider,'create',{name:'Other Room'});
+assert.equal((await read('',code)).status,403);assert.equal((await read(outsider,code)).status,403);assert.equal((await talk(outsider,code,'Not allowed')).status,403);
+assert.equal((await talk(host,code,'   ')).status,400);assert.equal((await talk(host,code,'x'.repeat(301))).status,400);assert.equal((await talk(host,code,'test',crypto.randomUUID(),{headers:{Origin:'https://evil.example'}})).status,403);
+const id=crypto.randomUUID();const html='<img src=x onerror=alert(1)> is plain text';const first=await talk(host,code,html,id,{payload:{name:'Forged Name',playerId:'wrong'}});assert.equal(first.status,201);assert.equal(first.data.message.name,'Talk Host');assert.equal(first.data.message.body,html);
+// Throttling is verified with simultaneous requests below; serial live requests can exceed the window.
+const retry=await talk(host,code,html,id);assert.equal(retry.status,200);assert.equal(retry.data.message.id,id);assert.equal((await talk(host,code,'Changed',id)).status,409);
+assert.equal((await read(guest,code)).data.messages.length,1);assert.equal((await read(outsider,other.code)).data.messages.length,0);
+let state=await game(host,'start',{code});const cards=JSON.stringify(state.players.find(p=>p.id===state.me).hand);
+const concurrent=await Promise.all([game(host,'check',{code}),talk(guest,code,'Nice cards. Good luck!')]);assert.equal(concurrent[1].status,201);
+const after=await(await fetch(`${base}/api/game?code=${code}`,{headers:{Authorization:`Bearer ${host}`}})).json();assert.equal(JSON.stringify(after.players.find(p=>p.id===after.me).hand),cards);assert.equal(after.pending[0],after.players.find(p=>p.id!==after.me).id);assert.equal(after.phase,'betting');
+await new Promise(r=>setTimeout(r,1600));const spam=await Promise.all([talk(guest,code,'One at a time.'),talk(guest,code,'Second at same moment.')]);assert.deepEqual(spam.map(x=>x.status).sort(),[201,429]);
+const history=(await read(host,code)).data.messages;assert.equal(history.length,3);assert.equal(history.filter(m=>m.id===id).length,1);assert.ok(history.every(m=>!('token' in m)&&!('hand' in m)));
+state=await game(guest,'check',{code});assert.equal(state.phase,'results');assert.equal((await read(host,code)).data.messages.length,3);
+console.log(JSON.stringify({status:'PASS',base,checks:['room membership authorization','cross-room isolation','server-owned sender identity','300-character limit','origin protection','plaintext content','idempotent retries','atomic rate limiting','chat concurrent with game move','cards and turn preserved','history after showdown']},null,2));

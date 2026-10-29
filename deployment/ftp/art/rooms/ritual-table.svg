@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480" preserveAspectRatio="none">
+<defs>
+ <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#56402c"/><stop offset=".16" stop-color="#211019"/><stop offset=".55" stop-color="#0c0810"/><stop offset=".82" stop-color="#342119"/><stop offset="1" stop-color="#09070c"/></linearGradient>
+ <linearGradient id="rail" x2=".2" y2="1"><stop stop-color="#5b3336"/><stop offset=".2" stop-color="#8c5550"/><stop offset=".34" stop-color="#472b33"/><stop offset=".65" stop-color="#241923"/><stop offset="1" stop-color="#110e17"/></linearGradient>
+ <linearGradient id="gold" x2=".3" y2="1"><stop stop-color="#674421"/><stop offset=".18" stop-color="#e3c183"/><stop offset=".38" stop-color="#806030"/><stop offset=".54" stop-color="#dcc087"/><stop offset=".7" stop-color="#4f361e"/><stop offset="1" stop-color="#ad8344"/></linearGradient>
+ <radialGradient id="felt" cx=".45" cy=".4" r=".7"><stop stop-color="#4a2038"/><stop offset=".4" stop-color="#30182d"/><stop offset=".8" stop-color="#17121f"/><stop offset="1" stop-color="#080b16"/></radialGradient>
+ <pattern id="weave" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 1H5M1 0V5" stroke="#e9d3c0" stroke-opacity=".035" stroke-width=".5"/></pattern>
+ <pattern id="studs" width="43" height="12" patternUnits="userSpaceOnUse"><circle cx="22" cy="6" r="2.3" fill="#c3a16a"/><circle cx="22" cy="5.5" r=".8" fill="#efd5a0"/></pattern>
+ <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feGaussianBlur stdDeviation="11"/></filter>
+</defs>
+<!-- Deep wooden apron beneath the padded rail. -->
+<ellipse cx="700" cy="276" rx="673" ry="191" fill="#000" opacity=".75" filter="url(#shadow)"/>
+<path d="M21 214C21 3 1379 3 1379 214V269C1379 507 21 507 21 269Z" fill="url(#wood)" stroke="#1c1215" stroke-width="3"/>
+<path d="M28 272C28 491 1372 491 1372 272" fill="none" stroke="url(#gold)" stroke-width="8"/>
+<path d="M35 288C100 467 1300 467 1365 288" fill="none" stroke="#8b6043" stroke-width="2" opacity=".5"/>
+<ellipse cx="700" cy="213" rx="679" ry="200" fill="url(#gold)"/>
+<ellipse cx="700" cy="207" rx="670" ry="191" fill="url(#rail)" stroke="#1a1018" stroke-width="3"/>
+<ellipse cx="700" cy="200" rx="652" ry="173" fill="none" stroke="#b69570" stroke-opacity=".3" stroke-width="2"/>
+<ellipse cx="700" cy="198" rx="632" ry="153" fill="url(#gold)"/>
+<ellipse cx="700" cy="198" rx="625" ry="147" fill="url(#felt)" stroke="#0a0b13" stroke-width="5"/>
+<ellipse cx="700" cy="198" rx="620" ry="143" fill="url(#weave)"/>
+<!-- Restrained ritual embroidery on the felt. -->
+<g fill="none" stroke="#b48b53" stroke-opacity=".18"><ellipse cx="700" cy="198" rx="586" ry="124" stroke-width="1"/><ellipse cx="700" cy="198" rx="487" ry="104"/><ellipse cx="700" cy="198" rx="248" ry="91"/><path d="M454 198H946M700 107V289M525 135L875 261M525 261L875 135"/><ellipse cx="700" cy="198" rx="95" ry="91"/><path d="M700 110L775 243H625ZM700 286L625 153H775Z"/></g>
+<!-- Front stitching and inset cabinet plaque create a separate foreground plane. -->
+<path d="M76 276C250 399 1150 399 1324 276" fill="none" stroke="#cbb190" stroke-opacity=".3" stroke-width="1.5"/>
+<path d="M166 341Q700 470 1234 341" fill="none" stroke="url(#studs)" stroke-width="12"/>
+<path d="M602 410H798L785 440H615Z" fill="#0a0a10" stroke="url(#gold)" stroke-width="2"/>
+<path d="M650 424H682M718 424H750" stroke="#80633b"/><path d="M700 413L710 427L700 438L690 427Z" fill="#664331" stroke="#d1a967"/><circle cx="700" cy="426" r="4" fill="#8b2e4a"/>
+</svg>
