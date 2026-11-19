@@ -64,3 +64,7 @@ Known limitation: a seat key is stored per browser tab. Refresh the same tab to 
 - [Audio credits](README/audio-launch-credits.md)
 - [Game design](GAME-DESIGN.md)
 - [Earlier development notes](README/release-history.md)
+
+## License and Copyright
+
+Copyright © 2026 Mycho James. All rights reserved. See [LICENSE](LICENSE) for the terms covering this game's original materials. Third-party software, dependencies, and assets remain subject to their respective license terms. See the artwork and audio credits in the README. Rights granted under separate written agreements remain in effect.
